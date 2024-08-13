@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Factorization</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #007BFF; color: white; padding: 10px 20px; text-align: center; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        h1 { color: #007BFF; }
+        form { margin-bottom: 20px; }
+        input[type="number"], input[type="submit"] { padding: 10px; font-size: 16px; width: calc(100% - 22px); margin-bottom: 10px; }
+        input[type="submit"] { background-color: #28A745; color: white; border: none; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #218838; }
+        .results { background-color: #f8f9fa; padding: 10px; border-radius: 5px; }
+        footer { background-color: #007BFF; color: white; text-align: center; padding: 10px; position: fixed; width: 100%; bottom: 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prime Factorization</h1>
+    </header>
+    <div class="container">
+        <form action="/" method="post">
+            <input type="number" name="number" placeholder="Enter an integer" required>
+            <input type="submit" value="Get Factors">
+        </form>
+        {% if factors %}
+            <div class="results">
+                <h3>Prime Factors:</h3>
+                <ul>
+                    {% for factor in factors %}
+                        <li>Prime: {{ factor[0] }}, Exponent: {{ factor[1] }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Application. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
